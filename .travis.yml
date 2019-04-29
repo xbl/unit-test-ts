@@ -1,0 +1,13 @@
+dist: coverage
+language: node_js
+node_js:
+  - "8"
+env:
+  - CODECOV_TOKEN="718a1aed-7418-4bb6-8047-d2dddc6a2006"
+install:
+  - yarn
+  - yarn global add codecov
+scripts:
+  - yarn test
+after_success:
+  - codecov -f coverage/*.json
