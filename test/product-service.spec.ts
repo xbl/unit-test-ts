@@ -16,6 +16,7 @@ test('Given ProductService, When ProductService.saveTop3(), Then save list to be
   const spy = sinon.spy(ProductService, 'save');
 
   await ProductService.saveTop3(['A', 'B', 'C', 'D']);
+  t.truthy(spy.calledOnce);
   t.truthy(spy.calledWith(['A', 'B', 'C']));
 
   spy.restore();
