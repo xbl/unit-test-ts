@@ -7,4 +7,7 @@ export default class Config {
     this.port = port;
   }
 
+  getUrl(): string {
+    return `https://${this.host}:${this.port}`;
+  }
 }
