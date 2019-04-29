@@ -11,3 +11,12 @@ test('Given ProductService, When ProductService.getTop3(), Then result to be [A,
 
   stub.restore();
 });
+
+test('Given ProductService, When ProductService.saveTop3(), Then save list to be [A, B, C]', async t => {
+  const spy = sinon.spy(ProductService, 'save');
+
+  await ProductService.saveTop3(['A', 'B', 'C', 'D']);
+  t.truthy(spy.calledWith(['A', 'B', 'C']));
+
+  spy.restore();
+});
